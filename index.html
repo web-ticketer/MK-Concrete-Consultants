@@ -4,76 +4,151 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MK Concrete Consultants</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f9fa;
     color: #333;
+    scroll-behavior: smooth;
 }
 
+/* Header */
 header {
-    background: #222;
+    background: #111;
     color: white;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
+/* Hero */
+.hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581090700227-1e8a63b7c4b2');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    animation: fadeIn 2s ease-in;
 }
 
-.hero {
-    background: #444;
+.hero h1 {
+    font-size: 45px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #ff9800;
+    padding: 12px 30px;
     color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e68900;
+}
+
+/* Sections */
+section {
     padding: 60px 20px;
     text-align: center;
 }
 
-.hero h2 {
-    font-size: 32px;
+h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
 }
 
-.btn {
-    display: inline-block;
-    background: #ff9800;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    margin-top: 15px;
-    border-radius: 5px;
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
 }
 
-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.services {
+.service-box {
     background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
 }
 
-.services ul {
-    list-style: none;
-    padding: 0;
+.service-box:hover {
+    transform: translateY(-10px);
 }
 
-.services li {
-    padding: 10px 0;
-    font-weight: bold;
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
-.why {
-    background: #eee;
+.gallery img {
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+    object-fit: cover;
 }
 
-footer {
-    background: #222;
+/* Quote Form */
+form {
+    max-width: 500px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #111;
     color: white;
-    text-align: center;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #333;
+}
+
+/* Map */
+.map iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
     padding: 20px;
 }
 
+/* WhatsApp */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -85,6 +160,13 @@ footer {
     text-decoration: none;
     font-weight: bold;
 }
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
 </style>
 </head>
 
@@ -92,37 +174,56 @@ footer {
 
 <header>
     <h1>MK Concrete Consultants</h1>
-    <p>Professional Concrete & Paving Services in Kampala</p>
 </header>
 
 <div class="hero">
-    <h2>Strong Foundations. Quality Work. Lasting Results.</h2>
-    <p>Driveways • Parking Lots • Concrete Slabs • Repairs</p>
-    <a class="btn" href="https://wa.me/YOURNUMBER">Get a Free Quote</a>
+    <h1>Strong Foundations. Quality Work. Lasting Results.</h1>
+    <p>Professional Concrete & Paving Services in Kampala</p>
+    <a class="btn" href="#quote">Get Free Quote</a>
 </div>
 
-<section class="services">
+<section>
     <h2>Our Services</h2>
-    <ul>
-        <li>Concrete Driveways</li>
-        <li>Commercial Parking Lots</li>
-        <li>Concrete Slabs & Foundations</li>
-        <li>Walkways & Patios</li>
-        <li>Concrete Repairs & Resurfacing</li>
-    </ul>
+    <div class="services-grid">
+        <div class="service-box">Concrete Driveways</div>
+        <div class="service-box">Parking Lots</div>
+        <div class="service-box">Concrete Slabs</div>
+        <div class="service-box">Walkways & Patios</div>
+        <div class="service-box">Repairs & Resurfacing</div>
+    </div>
 </section>
 
-<section class="why">
-    <h2>Why Choose Us?</h2>
-    <p>✔ Experienced Team</p>
-    <p>✔ Quality Materials</p>
-    <p>✔ Affordable Pricing</p>
-    <p>✔ On-Time Completion</p>
+<section>
+    <h2>Project Gallery</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+        <img src="https://images.unsplash.com/photo-1581091215367-59ab6b29c6d4">
+        <img src="https://images.unsplash.com/photo-1590479773265-7464e5d48118">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be">
+    </div>
+</section>
+
+<section id="quote">
+    <h2>Request a Free Quote</h2>
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="text" name="location" placeholder="Project Location">
+        <textarea name="message" placeholder="Describe your project" rows="4"></textarea>
+        <button type="submit">Submit Request</button>
+    </form>
+</section>
+
+<section>
+    <h2>Our Location</h2>
+    <div class="map">
+        <iframe src="YOUR_GOOGLE_MAPS_EMBED_LINK"></iframe>
+    </div>
 </section>
 
 <footer>
     <p>Serving Kampala | Wakiso | Entebbe</p>
-    <p>© 2026 MK Concrete Consultants. All Rights Reserved.</p>
+    <p>© 2026 MK Concrete Consultants</p>
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/YOURNUMBER">
